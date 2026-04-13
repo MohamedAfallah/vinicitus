@@ -1,5 +1,6 @@
-package es.madrid.vicinatus.bookings;
+package es.madrid.vicinatus.bookings.entities;
 
+import es.madrid.vicinatus.bookings.BookingStatus;
 import es.madrid.vicinatus.catalog.Item;
 import es.madrid.vicinatus.users.User;
 import jakarta.persistence.*;
@@ -42,4 +43,7 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     @Builder.Default
     private BookingStatus status = BookingStatus.PENDING;
+
+    @Column(nullable = false)
+    private String notesToOwner;
 }
